@@ -1,0 +1,15 @@
+@import "styles/constants.scss";
+
+.wrapper {
+  margin-top: 1rem;
+  margin-left: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  .svgIcon {
+    fill: $Blue;
+    &:hover {
+      fill: $Red;
+    }
+  }
+}

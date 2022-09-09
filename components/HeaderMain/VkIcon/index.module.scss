@@ -1,0 +1,23 @@
+@import "styles/constants.scss";
+
+.iconContainer {
+  width: 24px;
+  height: 24px;
+  background-color: $White;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  .svgIcon {
+    width: 16px;
+    height: 16px;
+    transform: translateY(3px);
+    fill: $Red;
+  }
+  &:hover {
+    background-color: $Red;
+    .svgIcon {
+      fill: $White;
+    }
+  }
+}

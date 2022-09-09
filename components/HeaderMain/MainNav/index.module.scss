@@ -1,0 +1,70 @@
+@import "../../../styles/constants.scss";
+
+.mainNavContainer {
+  position: static;
+  display: flex;
+
+  @media (max-width: 999px) {
+    display: block;
+    // visibility: collapse;
+    // width: 0px;
+    // margin: 0;
+    // overflow: hidden;
+    position: fixed; //Если поменять на absolute то будет занимать место.
+    top: 0px;
+    right: -100%;
+    padding-top: 60px;
+    padding-bottom: 40px;
+    background-color: $White;
+    color: $Blue;
+    box-shadow: 10px 10px 10px #eaeaea;
+    transition: all 0.3s ease-out;
+    z-index: 20;
+  }
+}
+.mainNavContainer.active {
+  @media (max-width: 999px) {
+    // visibility: visible;
+    // display: block;
+    right: 0px;
+    width: 100%;
+    transition: all 0.3s ease-out;
+  }
+}
+.mainNav {
+  display: block;
+  padding-left: 0;
+  @media (min-width: 1000px) {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+  }
+}
+.mainNavLinkItem {
+  list-style-type: none;
+  border-bottom: 1px dotted $Blue;
+  font-size: 1.125rem;
+  margin-right: 30px;
+  padding: 10px 20px;
+  a {
+    color: $MainText;
+  }
+  &:hover {
+    a {
+      color: $Red;
+    }
+  }
+  @media (min-width: 1000px) {
+    border: none;
+    padding: 0;
+    margin: 0;
+    color: $White;
+    a {
+      color: $White;
+    }
+  }
+}
+img.svgIcon {
+  fill: red;
+  border: 1px solid #eaeaea;
+}

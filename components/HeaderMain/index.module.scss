@@ -1,0 +1,87 @@
+@import "../../styles/constants.scss";
+
+.header {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: $Blue;
+  color: $White;
+  // height: 100px;
+  padding: 20px 40px;
+  font-size: 1.125rem;
+  font-weight: 700;
+  @media (max-width: 999px) {
+    height: 70px;
+  }
+  @media (max-width: 400px) {
+    padding: 20px 20px;
+  }
+  a {
+    color: $White;
+    border: none;
+  }
+}
+
+/* toggle-button */
+
+.header__burger {
+  position: relative;
+  z-index: 30;
+  width: 30px;
+  height: 20px;
+  cursor: pointer;
+  &:hover span {
+    background-color: $Yellow;
+  }
+  &:hover::before {
+    background-color: $Yellow;
+  }
+  &:hover::after {
+    background-color: $Yellow;
+  }
+  @media (min-width: 1000px) {
+    display: none;
+  }
+}
+
+.header__burger span {
+  display: block;
+  position: absolute;
+  top: 9px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: $Red;
+  transition: all 0.3s ease 0s;
+}
+.header__burger::before,
+.header__burger::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  left: 0;
+  background-color: $Red;
+  transition: all 0.3s ease 0s;
+}
+.header__burger::before {
+  top: 0px;
+}
+.header__burger::after {
+  bottom: 0px;
+}
+
+.header__burger.active span {
+  transform: scale(0);
+}
+.header__burger.active::before {
+  transform: rotate(45deg);
+  top: 9px;
+}
+.header__burger.active::after {
+  transform: rotate(-45deg);
+  bottom: 9px;
+}
+
+/* toggle button end */

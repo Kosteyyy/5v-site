@@ -1,0 +1,90 @@
+@import "constants.scss";
+
+.hero {
+  // border: 1px solid red;
+  margin: 0;
+
+  background-color: #aaa;
+  background-image: url("/img/main_page_bg.jpg");
+  // background-size: auto;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-blend-mode: multiply;
+  color: white;
+  @media (min-width: 1000px) {
+    background-size: cover;
+    height: 100vh;
+  }
+  :global(.container) {
+    height: 100%;
+  }
+  .content {
+    margin: 20% 0;
+    @media (min-width: 1000px) {
+      width: 45%;
+      height: 100%;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      justify-content: center;
+    }
+  }
+  h1 {
+    font-size: 2.5rem;
+    color: $White;
+  }
+  p {
+    color: $White;
+  }
+  .hero_buttons {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+  }
+}
+
+.about {
+  background-color: $Blue;
+  color: $White;
+  padding: 2rem 0;
+  p {
+    color: $White;
+    font-weight: 600;
+    font-size: 1.2rem;
+  }
+  h2.title {
+    color: $LightGreen;
+    text-align: center;
+    font-size: 1.8rem;
+    margin-bottom: 3rem;
+  }
+  h2 {
+    color: $White;
+  }
+  a {
+    text-transform: uppercase;
+    font-size: 1rem;
+    font-weight: 600;
+    padding-bottom: 2px;
+    margin-top: 2rem;
+    color: $White;
+    &:hover {
+      color: $Red;
+    }
+
+    border-bottom: 4px solid $Red;
+  }
+  .about_row {
+    @media (min-width: 1000px) {
+      display: flex;
+      gap: 2rem;
+      .about_col {
+        width: 33%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+      }
+    }
+  }
+}
