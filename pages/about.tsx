@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import HeaderMain from "../components/HeaderMain/HeaderMain";
 import MainFooter from "../components/MainFooter/MainFooter";
@@ -130,14 +131,24 @@ const About: React.FC<any> = ({ stat }) => {
             <div>
               <Link href={ExtLinks.FondPotanin}>
                 <a>
-                  <img src="/img/FondPotanin-768x208.png" alt="Фонд Потанина" />
+                  <Image
+                    src="/img/FondPotanin-768x208.png"
+                    alt="Фонд Потанина"
+                    width={260}
+                    height={85}
+                  />
                 </a>
               </Link>
             </div>{" "}
             <div>
               <Link href={ExtLinks.Unisender}>
                 <a>
-                  <img src="/img/Unisender.jpg" alt="Unisender" />
+                  <Image
+                    src="/img/Unisender.jpg"
+                    alt="Unisender"
+                    width={260}
+                    height={85}
+                  />
                 </a>
               </Link>
             </div>
