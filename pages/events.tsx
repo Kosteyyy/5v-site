@@ -15,7 +15,7 @@ interface IProps {
 
 const Events: React.FC<IProps> = ({ events, stat }) => {
   // console.log("WINDOW YMAPS ", window.ymaps);
-  useEffect(initMap, []);
+  useEffect(initMap, [window?.ymaps]);
   function initMap() {
     if (!window.ymaps) return;
     const rootElement = document.getElementById("rootmap");
