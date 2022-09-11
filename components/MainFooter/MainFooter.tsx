@@ -53,7 +53,7 @@ const MainFooter: React.FC<IProps> = ({ showStat = false, stat = null }) => {
           <div className={styles.rules_col}>
             <h2>Контакты</h2>
             <p>
-              АНО &quot;Паpкpан&quot;. ОГРН 1137799012438, ИНН/КПП
+              АНО &#34;Паpкpан&#34;. ОГРН 1137799012438, ИНН/КПП
               7729451893/774301001, дата регистрации 20.06.2013
             </p>
             <p>
