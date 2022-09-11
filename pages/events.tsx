@@ -15,9 +15,9 @@ interface IProps {
 
 const Events: React.FC<IProps> = ({ events, stat }) => {
   // console.log("WINDOW YMAPS ", window.ymaps);
-  useEffect(initMap, [window?.ymaps]);
+  // useEffect(initMap, [window?.ymaps]);
   function initMap() {
-    if (!window.ymaps) return;
+    // if (!window.ymaps) return;
     const rootElement = document.getElementById("rootmap");
     if (rootElement?.innerHTML) return;
     // @eslint-disable-next-line
@@ -46,6 +46,7 @@ const Events: React.FC<IProps> = ({ events, stat }) => {
         src="https://api-maps.yandex.ru/2.1/?lang=ru_RU&amp;apikey=8539c825-fd7a-4501-a047-b534f491f00c"
         strategy="beforeInteractive"
         type="text/javascript"
+        onReady={initMap}
       ></Script>
       {/* <Script src="map.js"></Script> */}
       <div>
