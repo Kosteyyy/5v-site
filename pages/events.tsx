@@ -39,16 +39,16 @@ const Events: React.FC<IProps> = ({ events, stat }) => {
     <>
       <Head>
         <title>Events</title>
-        {/* <script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU&amp;apikey=8539c825-fd7a-4501-a047-b534f491f00c"></script>
-         */}
+        <script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU&amp;apikey=8539c825-fd7a-4501-a047-b534f491f00c"></script>
+
         <script src="map.js"></script>
       </Head>
-      <Script
+      {/* <Script
         src="https://api-maps.yandex.ru/2.1/?lang=ru_RU&amp;apikey=8539c825-fd7a-4501-a047-b534f491f00c"
         strategy="beforeInteractive"
         type="text/javascript"
         // onReady={initMap}
-      ></Script>
+      ></Script> */}
       {/* <Script src="map.js" strategy="lazyOnload"></Script> */}
       <div>
         <HeaderMain />
