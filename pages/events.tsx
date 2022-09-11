@@ -14,24 +14,26 @@ interface IProps {
 }
 
 const Events: React.FC<IProps> = ({ events, stat }) => {
-  // function initMap() {
-  //   // if (!ymaps) return;
-  //   const rootElement = document.getElementById("rootmap");
-  //   if (rootElement?.innerHTML) return;
-  //   // @eslint-disable-next-line
-  //   let myMap = new ymaps.Map(
-  //     "rootmap",
-  //     {
-  //       // При инициализации карты обязательно нужно указать
-  //       // её центр и коэффициент масштабирования.
-  //       center: [55.76, 37.64], // Москва
-  //       zoom: 10,
-  //     }
-  //     // {
-  //     //   searchControlProvider: "yandex#search",
-  //     // }
-  //   );
-  // }
+  // console.log("WINDOW YMAPS ", window.ymaps);
+  useEffect(initMap, []);
+  function initMap() {
+    // if (!ymaps) return;
+    const rootElement = document.getElementById("rootmap");
+    if (rootElement?.innerHTML) return;
+    // @eslint-disable-next-line
+    let myMap = new window.ymaps.Map(
+      "rootmap",
+      {
+        // При инициализации карты обязательно нужно указать
+        // её центр и коэффициент масштабирования.
+        center: [55.76, 37.64], // Москва
+        zoom: 10,
+      }
+      // {
+      //   searchControlProvider: "yandex#search",
+      // }
+    );
+  }
 
   return (
     <>
@@ -45,7 +47,7 @@ const Events: React.FC<IProps> = ({ events, stat }) => {
         strategy="beforeInteractive"
         type="text/javascript"
       ></Script>
-      <Script src="map.js"></Script>
+      {/* <Script src="map.js"></Script> */}
       <div>
         <HeaderMain />
         <h1 className="page_title">Карта мероприятий</h1>
