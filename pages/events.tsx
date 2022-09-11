@@ -17,7 +17,7 @@ const Events: React.FC<IProps> = ({ events, stat }) => {
   // console.log("WINDOW YMAPS ", window.ymaps);
   useEffect(initMap, []);
   function initMap() {
-    // if (!ymaps) return;
+    if (!window.ymaps) return;
     const rootElement = document.getElementById("rootmap");
     if (rootElement?.innerHTML) return;
     // @eslint-disable-next-line
