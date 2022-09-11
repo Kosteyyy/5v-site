@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Head from "next/head";
 import HeaderMain from "../components/HeaderMain/HeaderMain";
 import MainFooter from "../components/MainFooter/MainFooter";
 import { getStatistics } from "../utils/api";
@@ -6,7 +7,6 @@ import styles from "../styles/Events.module.scss";
 import { TEvent, TEventsResponse } from "../types/types";
 import Script from "next/script";
 import { useEffect } from "react";
-// import { initMap } from "../utils/map";
 
 interface IProps {
   events: TEvent[];
@@ -14,13 +14,8 @@ interface IProps {
 }
 
 const Events: React.FC<IProps> = ({ events, stat }) => {
-  // useEffect(() => {
-  //   // @eslint-disable-next-line
-  //   initMap();
-  //   // @eslint-disable-next-line
-  // });
-
   // function initMap() {
+  //   // if (!ymaps) return;
   //   const rootElement = document.getElementById("rootmap");
   //   if (rootElement?.innerHTML) return;
   //   // @eslint-disable-next-line
@@ -40,21 +35,26 @@ const Events: React.FC<IProps> = ({ events, stat }) => {
 
   return (
     <>
-      <Script
+      <Head>
+        <title>Events</title>
+        <script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU&amp;apikey=8539c825-fd7a-4501-a047-b534f491f00c"></script>
+        <script src="map.js"></script>
+      </Head>
+      {/* <Script
         src="https://api-maps.yandex.ru/2.1/?lang=ru_RU&amp;apikey=8539c825-fd7a-4501-a047-b534f491f00c"
         strategy="beforeInteractive"
         type="text/javascript"
-        onReady={() => {
-          const rootElement = document.getElementById("rootmap");
-          if (rootElement?.innerHTML) return;
-          new ymaps.Map("rootmap", {
-            // При инициализации карты обязательно нужно указать
-            // её центр и коэффициент масштабирования.
-            center: [55.76, 37.64], // Москва
-            zoom: 10,
-          });
-        }}
-      ></Script>
+        // onReady={() => {
+        //   const rootElement = document.getElementById("rootmap");
+        //   if (rootElement?.innerHTML) return;
+        //   new ymaps.Map("rootmap", {
+        //     // При инициализации карты обязательно нужно указать
+        //     // её центр и коэффициент масштабирования.
+        //     center: [55.76, 37.64], // Москва
+        //     zoom: 10,
+        //   });
+        // }}
+      ></Script> */}
       <div>
         <HeaderMain />
         <h1 className="page_title">Карта мероприятий</h1>

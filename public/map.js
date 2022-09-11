@@ -5,6 +5,8 @@ console.log("MAPBASICS ACTIVATED");
 ymaps.ready(initMap);
 
 function initMap() {
+  const rootElement = document.getElementById("rootmap");
+  if (rootElement?.innerHTML) return;
   // Создание экземпляра карты и его привязка к контейнеру с
   // заданным id ("map").
   myMap = new ymaps.Map(
